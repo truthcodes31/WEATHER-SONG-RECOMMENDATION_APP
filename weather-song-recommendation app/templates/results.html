@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Song Recommendations</title>
+</head>
+<body>
+    <h1>Song Recommendations for {{ city }}</h1>
+    
+    <p><strong>Temperature:</strong> {{ temperature }}°C</p>
+    <p><strong>Humidity:</strong> {{ humidity }}%</p>
+    <p><strong>Condition:</strong> {{ description }}</p>
+
+    <h2>Recommended Songs for {{ category }} weather:</h2>
+    <ul>
+        {% for song in recommendations %}
+        <li><a href="{{ song.split(' - ')[1] }}" target="_blank">{{ song.split(' - ')[0] }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="/">Go back</a>
+</body>
+</html>
+
